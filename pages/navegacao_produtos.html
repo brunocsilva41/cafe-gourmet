@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/produtos.css">
     <title>Mostruário de Produtos - Cafeteria Gourmet</title>
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="Logo da Empresa" class="logo">
+        <img src="../css/imagens/logo.png" alt="Logo da Empresa" class="logo">
         <nav>
-            <a href="index.html">Inicio</a>
-            <a href="/pages/carrinho.html">Carrinho (<span id="contadorCarrinho">0</span>)</a>
-            <a href="/pages/sobre.html">Sobre</a>           
-            <a href="/pages/login.html">Perfil</a>
+            <a href="/index.html">Inicio</a>
+            <a href="carrinho.html">Carrinho (<span id="contadorCarrinho">0</span>)</a>
+            <a href="sobre.html">Sobre</a>           
+            <a href="login.html">Perfil</a>
         </nav>
     </header>
     <main>
@@ -28,60 +29,60 @@
 
         <div class="product-list">
             <div class="product-item" data-name="Café Gourmet 1" data-price="20.00" data-category="cafe">
-                <img src="imagens/cafe1.jpg" alt="Café Gourmet 1">
+                <img src="../css/imagens/cafe1.jpg" alt="Café Gourmet 1">
                 <h3>Café Gourmet 1</h3>
                 <p>R$20,00</p>
-                <button onclick="adicionarAoCarrinho('Café Gourmet 1', 20.00, 'imagens/cafe1.jpg')">Adicionar ao Carrinho</button>
+                <button onclick="adicionarAoCarrinho('Café Gourmet 1', 20.00, '../css/imagens/cafe1.jpg')">Adicionar ao Carrinho</button>
             </div>
             <div class="product-item" data-name="Café Gourmet 2" data-price="25.00" data-category="cafe">
-                <img src="imagens/cafe2.jpg" alt="Café Gourmet 2">
+                <img src="../css/imagens/cafe2.jpg" alt="Café Gourmet 2">
                 <h3>Café Gourmet 2</h3>
                 <p>R$25,00</p>
-                <button onclick="adicionarAoCarrinho('Café Gourmet 2', 25.00, 'imagens/cafe2.jpg')">Adicionar ao Carrinho</button>
+                <button onclick="adicionarAoCarrinho('Café Gourmet 2', 25.00, '../css/imagens/cafe2.jpg')">Adicionar ao Carrinho</button>
             </div>
             <div class="product-item" data-name="Café Gourmet 3" data-price="30.00" data-category="cafe">
-                <img src="imagens/cafe3.jpg" alt="Café Gourmet 3">
+                <img src="../css/imagens/cafe3.jpg" alt="Café Gourmet 3">
                 <h3>Café Gourmet 3</h3>
                 <p>R$30,00</p>
-                <button onclick="adicionarAoCarrinho('Café Gourmet 3', 30.00, 'imagens/cafe3.jpg')">Adicionar ao Carrinho</button>
+                <button onclick="adicionarAoCarrinho('Café Gourmet 3', 30.00, '../css/imagens/cafe3.jpg')">Adicionar ao Carrinho</button>
             </div>
 
             <div class="product-item" data-name="Chá Verde" data-price="15.00" data-category="cha">
-                <img src="imagens/cha1.jpg" alt="Chá Verde">
+                <img src="../css/imagens/cha1.jpg" alt="Chá Verde">
                 <h3>Chá Verde</h3>
                 <p>R$15,00</p>
-                <button onclick="adicionarAoCarrinho('Chá Verde', 15.00, 'imagens/cha1.jpg')">Adicionar ao Carrinho</button>
+                <button onclick="adicionarAoCarrinho('Chá Verde', 15.00, '../css/imagens/cha1.jpg')">Adicionar ao Carrinho</button>
             </div>
             <div class="product-item" data-name="Chá Preto" data-price="12.00" data-category="cha">
-                <img src="imagens/cha2.jpg" alt="Chá Preto">
+                <img src="../css/imagens/cha2.jpg" alt="Chá Preto">
                 <h3>Chá Preto</h3>
                 <p>R$12,00</p>
-                <button onclick="adicionarAoCarrinho('Chá Preto', 12.00, 'cha2.jpg')">Adicionar ao Carrinho</button>
+                <button onclick="adicionarAoCarrinho('Chá Preto', 12.00, '../css/imagens/cha2.jpg')">Adicionar ao Carrinho</button>
             </div>
             <div class="product-item" data-name="Chá de Camomila" data-price="10.00" data-category="cha">
-                <img src="imagens/cha3.jpg" alt="Chá de Camomila">
+                <img src="../css/imagens/cha3.jpg" alt="Chá de Camomila">
                 <h3>Chá de Camomila</h3>
                 <p>R$10,00</p>
-                <button onclick="adicionarAoCarrinho('Chá de Camomila', 10.00, 'imagens/cha3.jpg')">Adicionar ao Carrinho</button>
+                <button onclick="adicionarAoCarrinho('Chá de Camomila', 10.00, '../css/imagens/cha3.jpg')">Adicionar ao Carrinho</button>
             </div>
 
             <div class="product-item" data-name="Caneca" data-price="8.00" data-category="acessorios">
-                <img src="imagens/caneca1.jpg" alt="Caneca">
+                <img src="../css/imagens/caneca1.jpg" alt="Caneca">
                 <h3>Caneca</h3>
                 <p>R$8,00</p>
-                <button onclick="adicionarAoCarrinho('Caneca', 8.00, 'imagens/caneca1.jpg')">Adicionar ao Carrinho</button>
+                <button onclick="adicionarAoCarrinho('Caneca', 8.00, '../css/imagens/caneca1.jpg')">Adicionar ao Carrinho</button>
             </div>
             <div class="product-item" data-name="Filtro de Café" data-price="5.00" data-category="acessorios">
-                <img src="imagens/filtro1.jpg" alt="Filtro de Café">
+                <img src="../css/imagens/filtro1.jpg" alt="Filtro de Café">
                 <h3>Filtro de Café</h3>
                 <p>R$5,00</p>
-                <button onclick="adicionarAoCarrinho('Filtro de Café', 5.00, 'imagens/filtro1.jpg')">Adicionar ao Carrinho</button>
+                <button onclick="adicionarAoCarrinho('Filtro de Café', 5.00, '../css/imagens/filtro1.jpg')">Adicionar ao Carrinho</button>
             </div>
             <div class="product-item" data-name="Coador de Pano" data-price="7.00" data-category="acessorios">
-                <img src="imagens/coador1.jpg" alt="Coador de Pano">
+                <img src="../css/imagens/coador1.jpg" alt="Coador de Pano">
                 <h3>Coador de Pano</h3>
                 <p>R$7,00</p>
-                <button onclick="adicionarAoCarrinho('Coador de Pano', 7.00, 'imagens/coador1.jpg')">Adicionar ao Carrinho</button>
+                <button onclick="adicionarAoCarrinho('Coador de Pano', 7.00, '../css/imagens/coador1.jpg')">Adicionar ao Carrinho</button>
             </div>
         </div>
 
