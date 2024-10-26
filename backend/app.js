@@ -1,17 +1,22 @@
 const express = require('express');
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
+require('dotenv').config();
 
 const app = express();
+const db_password = process.env.db_password;
+const db_host = process.env.db_host;
+const db_user = process.env.db_user;
+const db_port = process.env.db_port;
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Configuração da conexão com o banco de dados
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',    // Usuário do banco de dados
-    password: 'BCS.silva901341@',  // Senha do banco de dados
+    host: 'db_host',    // Endereço do banco de dados
+    user: 'db_user',    // Usuário do banco de dados
+    password: 'db_senha',  // Senha do banco de dados
     database: 'nomedobancodedados',   // Nome do banco de dados
-    port: '3306'
+    port: 'db_port'  // Porta do banco de dados
 });
 
 db.connect(err => {
