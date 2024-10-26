@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Finalização da Compra - Cafeteria Gourmet</title>
+</head>
+<body>
+    
+    <header>
+        <img src="logo.png" alt="Logo da Empresa" class="logo">
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="navegacao_produtos.html">Produtos</a>
+            <a href="carrinho.html">Carrinho</a>
+            <a href="/pages/login.html">Perfil</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Finalização da Compra</h2>
+        <form action="confirmacao.html" method="post">
+            <label for="address">Endereço de Entrega:</label>
+            <input type="text" id="address" name="address" required>
+            <label for="payment">Método de Pagamento:</label>
+            <select id="payment" name="payment" required>
+                <option value="credit-card">Cartão de Crédito</option>
+                <option value="paypal">PayPal</option>
+                <option value="boleto">Boleto</option>
+            </select>
+            <button type="submit">Confirmar Compra</button>
+        </form>
+    </main>
+</body>
+</html>

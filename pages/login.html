@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Login - Cafeteria Gourmet</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/index.html">Inicio</a>
+            <a href="/pages/navegacao_produtos.html">Produtos</a>
+            <a href="/pages/carrinho.html">Carrinho</a>
+            <a href="/pages/login.html">Perfil</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="login-form">
+            <img src="logo.png" alt="Logo da Empresa" class="logo">
+            <h2>Login</h2>
+            <form action="/criar-conta" method="post">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+            <button>
+             <a href="/pages/criar_conta.html" style="text-decoration: none;">CRIAR CONTA</a>
+            </button>
+            <div class="additional-links">
+                <a href="#">Esqueci a senha</a>
+                <p>Ou</p>
+                <button class="social-login google">Login com Google</button>
+                <button class="social-login facebook">Login com Facebook</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
