@@ -39,7 +39,8 @@ app.post('/criar-conta', [
     const sql = `INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)`;
     db.query(sql, [name, email, hashedPassword], (err, result) => {
         if (err) throw err;
-        res.send('<script>alert("Conta criada com sucesso!"); window.location.href = "../pages/login.html";</script>');
+        res.send('<script>alert("Conta criada com sucesso!"); </script>');
+        res.send()
     });
 });
 
@@ -61,17 +62,18 @@ app.post('/login-conta', [
             const user = result[0];
             const match = await bcrypt.compare(password, user.senha);
             if (match) {
-                res.send('<script>alert("Login realizado com sucesso!"); window.location.href = "../pages/dashboard.html";</script>');
+                res.send('LOGIN REALIZADO COM SUCESSO' , id_usuario , nome_usuario , email_usuario);
             } else {
-                res.send('<script>alert("E-mail ou senha incorretos!"); window.location.href = "../pages/login.html";</script>');
+                res.send('LOGIN REALIZADO COM SUCESSO' , id_usuario , nome_usuario , email_usuario);
             }
         } else {
-            res.send('<script>alert("E-mail ou senha incorretos!"); window.location.href = "../pages/login.html";</script>');
+            res.send('LOGIN NAO REALIZADO' , id_usuario , nome_usuario , email_usuario);
         }
     });
 });
 
 // Iniciar o servidor HTTP
-app.listen(3000, () => {
+app.listen(3000, (err) => {
+    if(err) console.log(err);
     console.log('Servidor rodando em http://localhost:3306');
 });
