@@ -5,12 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Login - Cafeteria Gourmet</title>
-    if (typeof(Storage) !== "undefined") {
-        // Code for localStorage/sessionStorage.
-      } else {
-        // Sorry! No Web Storage support..
-    }
 </head>
 <body>
     <header>
@@ -23,13 +19,13 @@
     </header>
     <div class="container">
         <div class="login-form">
-            <img src="logo.png" alt="Logo da Empresa" class="logo">
+            <img src="" alt="Logo da Empresa" class="logo">
             <h2> Realize o Login com:</h2>
-            <form action="http://localhost:3000/login-conta" method="POST"  onsubmit="event.preventDefault(); window.location.href='../pages/conta.html';">
+            <form  id="loginForm" action="http://localhost:3000/login-conta" method="post" >
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
                 <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" minlength="6" required>
+                <input type="password" id="password" name="password" minlength="3" required>
                 <button type="submit">Login</button>
                 <br>
                 <a href="#">Esqueci a senha</a>
@@ -43,10 +39,45 @@
             <div>
             <h2>Não tem uma conta?</h2>
             <button>
-             <a href="../pages/criar_conta.html" class="criarconta">CRIAR CONTA</a>
+            <a href="../pages/criar_conta.html" class="criarconta">CRIAR CONTA</a>
             </button>
             </div>
         </div>
     </div>
+    <script>
+        document.getElementById('loginform').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita o envio padrão do formulário
+            // Captura os valores do formulário
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            // Chama a função de login
+            login(email, password);
+        });
+        
+        async function login(email, password ) {
+            try {
+                const response = await axios.post('http://localhost:3000/login-conta', {
+                    email: email,
+                    password: password
+                });
+
+                if (response.status === 200 && response.data.message === 'teste') {
+                    // Armazena os dados do usuário no localStorage
+                    const { userId, userName, userEmail } = response.data;
+                    localStorage.setItem('userId', userId);
+                    localStorage.setItem('userName', userName);
+                    localStorage.setItem('userEmail', userEmail);
+        
+                    // Redirecionar para a página de conta
+                    alert('Login realizado com sucesso!');
+                    window.location.href = '../pages/conta.html';
+                } else {
+                    console.error('Erro ao fazer login:', response.data.message);
+                }
+            } catch (error) {
+                console.error('Erro na requisição:', error);
+            }
+        }
+        </script>
 </body>
 </html>

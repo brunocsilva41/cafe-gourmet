@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CAFETERIA Gourmet</title>
-    <link rel="stylesheet" href="../css/conta.css">
+    <link rel="stylesheet" href="../css/conta.css"
 </head>
 <body>
+    <navbar>
+        <a href="../index.html">Inicio</a>
+        <a href="navegacao_produtos.html">Produtos</a>
+        <a href="/pages/carrinho.html">Carrinho</a>
+        <a href="/pages/login.html">Perfil</a>
+    </navbar>
     <div class="perfil">
         <div class="greeting">
             <h1>Olá, <span id="user-name">[Nome]</span>!</h1>
@@ -16,45 +22,32 @@
 
     <div class="account-info">
         <h2>Informações Pessoais e Configurações</h2>
-        <p>Nome: <span id="user-name-info"></span></p>
-        <p>Idade: <span id="user-age-info"></span></p>
-        <p>E-mail: <span id="user-email-info"></span></p>
-        <p>Número de Telefone: <span id="user-phone-info"></span></p>
-    </div>
+        <p>Email: <span id="userEmail">'getElementById(userEmail)'  </span></p>
+        <p>Endereço: <span id="user-address-info"> </span></p>
+        <p>Número de Telefone: <span id="user-phone-info"></span> </p>
+    </div>    
+    <div id="userInfo"></div>
 
-    <div class="order-history">
-        <h2>Histórico de Pedidos</h2>
-        <ul class="orders" id="order-list">
-            <!-- Pedidos serão listados aqui -->
-        </ul>
-    </div>
+    <script>
+        // Recupera os dados do localStorage
+        const userId = localStorage.getItem('userId');
+        const userName = localStorage.getItem('userName');
+        const userEmail = localStorage.getItem('userEmail');
 
-    <div class="cart-wishlist">
-        <h2>Carrinho de Compras e Wishlist</h2>
-        <div class="wishlist">
-            <h3>Wishlist</h3>
-            <ul id="wishlist">
-                <!-- Produtos favoritos serão listados aqui -->
-            </ul>
-        </div>
-        <div class="cart">
-            <h3>Carrinho</h3>
-            <ul id="cart-items">
-                <!-- Itens do carrinho serão listados aqui -->
-            </ul>
-            <button type="button">Retomar Compra</button>
-        </div>
-    </div>
+        // Exibe os dados na página
+        if (userName && userEmail) {
+            document.getElementById('userInfo').innerHTML = `
+                <p>ID: ${userId}</p>
+                <p>Nome: ${userName}</p>
+                <p>Email: ${userEmail}</p>
+            `;
+        } else {
+            document.getElementById('userInfo').innerHTML = `<p>Usuário não logado.</p>`;
+        }
+    </script>
+</body>
+</html>
 
-    <div class="payment-methods">
-        <h2>Pagamento e Métodos de Pagamento</h2>
-        <div class="saved-cards" id="saved-cards">
-            <!-- Cartões salvos -->
-        </div>
-        <div class="billing-history" id="billing-history">
-            <!-- Histórico de pagamentos -->
-        </div>
-    </div>
 
     <script src="../script/conta.js"></script>
 </body>
